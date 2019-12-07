@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import All from '../components/All.vue'
+import Todo from '../components/Todo.vue'
+import Finished from '../components/Finished.vue'
+
 
 Vue.use(VueRouter)
 
@@ -8,20 +11,28 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: Home
+    redirect: '/all'
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/all',
+    name: 'all',
+    component: All
+  },
+  {
+    path: '/todo',
+    name: 'todo',
+    component: Todo
+  },
+  {
+    path: '/finished',
+    name: 'finished',
+    component: Finished
   }
 ]
 
 const router = new VueRouter({
-  routes
+  routes,
+  linkActiveClass: 'activelinkzhenjie'
 })
 
 export default router
