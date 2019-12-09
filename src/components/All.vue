@@ -40,7 +40,7 @@ export default {
     }
   }
   .done {
-    background-color: lightpink;
+    background-color:  #468de97f;
     text-decoration-line: line-through;
   }
 }
