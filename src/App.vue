@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <TodoListHead @addNew="addNew"/>    
-    <MainView/>
+    <MainView ref="mainview"/>
   </div>
 </template>
 
@@ -15,6 +15,11 @@ export default {
   components: {
     TodoListHead,
     MainView
+  },
+  methods: {
+    addNew(todo){
+      this.$refs.mainview.addNew(todo)
+    }
   }
 };
 </script>
@@ -28,4 +33,5 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
 </style>
